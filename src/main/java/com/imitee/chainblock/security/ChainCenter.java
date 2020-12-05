@@ -9,7 +9,7 @@ import java.util.HashMap;
 /**
  * 测试类，通常用于测试区块链逻辑的工作
  */
-public class NoobChain {
+public class ChainCenter {
     /**
      * 比较粗略是用数组列表来实现这个区块链数据结构
      */

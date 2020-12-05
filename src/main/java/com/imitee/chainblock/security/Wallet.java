@@ -44,7 +44,7 @@ public class Wallet {
     // 返回余额
     public float getBalance(){
         float total = 0;
-        for (Map.Entry<String, TransactionOutput> item : NoobChain.UTXOs.entrySet()) {
+        for (Map.Entry<String, TransactionOutput> item : ChainCenter.UTXOs.entrySet()) {
             TransactionOutput UTXO = item.getValue();
             if (UTXO.isMine(publicKey)) {
                 // 将它添加到还未花费的交易中

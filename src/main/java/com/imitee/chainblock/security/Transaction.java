@@ -83,7 +83,7 @@ public class Transaction {
 
         // 将交易输入收集(保证他们都还没花费）
         for (TransactionInput i : inputs) {
-            i.UTXO = NoobChain.UTXOs.get(i.transactionOutputId);
+            i.UTXO = ChainCenter.UTXOs.get(i.transactionOutputId);
         }
 
         // 生成余额
@@ -101,7 +101,7 @@ public class Transaction {
 
         // 将本次交易输出记录到全局交易记录中
         for (TransactionOutput o : outputs) {
-            NoobChain.UTXOs.put(o.id, o);
+            ChainCenter.UTXOs.put(o.id, o);
         }
 
         // 最后从全局交易记录中删除这些已花费输入
@@ -109,7 +109,7 @@ public class Transaction {
             if (i.UTXO == null) {
                 continue;
             }
-            NoobChain.UTXOs.remove(i.UTXO.id);
+            ChainCenter.UTXOs.remove(i.UTXO.id);
         }
         return true;
     }
