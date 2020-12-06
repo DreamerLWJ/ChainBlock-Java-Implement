@@ -1,20 +1,18 @@
-package com.imitee.chainblock.entity;
+package com.imitee.chainblock.core.block;
 
-import com.imitee.chainblock.security.Transaction;
+import com.imitee.chainblock.core.transaction.Transaction;
 import com.imitee.chainblock.util.StringUtil;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 /**
  * @Description: 定义区块链的类块
  * @Author 11740
  * @Date 2020/12/4 0:30
  */
-public class Block implements Serializable {
-    private static final long serialVersionID = 1L;
+public class Block {
     /**
      * 生成区块的时间戳
      */

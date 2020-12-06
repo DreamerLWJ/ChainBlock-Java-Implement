@@ -1,6 +1,9 @@
-package com.imitee.chainblock.security;
+package com.imitee.chainblock.core;
 
-import com.imitee.chainblock.entity.Block;
+import com.imitee.chainblock.core.block.Block;
+import com.imitee.chainblock.core.transaction.Transaction;
+import com.imitee.chainblock.core.transaction.TransactionInput;
+import com.imitee.chainblock.core.transaction.TransactionOutput;
 
 import java.security.Security;
 import java.util.ArrayList;

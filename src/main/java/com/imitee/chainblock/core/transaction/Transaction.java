@@ -1,5 +1,6 @@
-package com.imitee.chainblock.security;
+package com.imitee.chainblock.core.transaction;
 
+import com.imitee.chainblock.core.ChainCenter;
 import com.imitee.chainblock.util.StringUtil;
 
 import java.security.PrivateKey;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
  */
 public class Transaction {
     /**
-     * 大致生成了多少交易数据
+     * 至今已有多少次交易
      */
     private static int sequence = 0;
     /**

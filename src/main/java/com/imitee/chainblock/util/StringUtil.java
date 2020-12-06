@@ -1,6 +1,6 @@
 package com.imitee.chainblock.util;
 
-import com.imitee.chainblock.security.Transaction;
+import com.imitee.chainblock.core.transaction.Transaction;
 
 import java.nio.charset.StandardCharsets;
 import java.security.*;

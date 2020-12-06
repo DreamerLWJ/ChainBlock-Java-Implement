@@ -1,4 +1,6 @@
-package com.imitee.chainblock.security;
+import com.imitee.chainblock.core.transaction.Transaction;
+import com.imitee.chainblock.core.transaction.TransactionInput;
+import com.imitee.chainblock.core.transaction.TransactionOutput;
 
 import java.security.*;
 import java.security.spec.ECGenParameterSpec;
