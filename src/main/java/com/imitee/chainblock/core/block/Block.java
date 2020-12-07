@@ -13,6 +13,7 @@ import java.util.Date;
  * @Date 2020/12/4 0:30
  */
 public class Block {
+    /* ******************区块头**************************/
     /**
      * 生成区块的时间戳
      */
@@ -34,6 +35,8 @@ public class Block {
     private int nonce;
 
     public String merkleRoot;
+    /* ****************** 区块体 **************************/
+
     /**
      * 当前区块存储的业务数据集合
      */

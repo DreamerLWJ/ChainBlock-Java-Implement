@@ -106,14 +106,14 @@ public class ChainCenter {
         System.out.println("\nWalletA余额为: " + walletA.getBalance());
         System.out.println("WalletB余额为:" + walletB.getBalance());
         addBlock(block3);
-        isChainValid();
+        chainValid();
     }
 
     /**
      * 验证整条链是否合理
      * @return 合理或者不合理
      */
-    public static Boolean isChainValid() {
+    public static Boolean chainValid() {
         Block currentBlock;
         Block previousBlock;
         String hashTarget = new String(new char[difficulty]).replace('\0', '0');
