@@ -1,9 +1,9 @@
 package com.imitee.chainblock.core.block;
 
 import com.imitee.chainblock.core.transaction.Transaction;
+import com.imitee.chainblock.core.MerkleTree;
 import com.imitee.chainblock.util.StringUtil;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -60,7 +60,7 @@ public class Block {
 
     public void mineBlock(int difficulty) {
         // merkle 树来计算所有交易信息
-        merkleRoot = StringUtil.getMerkleRoot(transactions);
+        merkleRoot = MerkleTree.justRoot(transactions);
         String target = new String(new char[difficulty]).replace('\0', '0');
         while (!hash.substring(0, difficulty).equals(target)) {
             nonce++;

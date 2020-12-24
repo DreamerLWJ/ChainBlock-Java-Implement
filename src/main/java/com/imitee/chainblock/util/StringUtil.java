@@ -86,23 +86,4 @@ public class StringUtil {
     public static String getStringFromKey(Key key) {
         return Base64.getEncoder().encodeToString(key.getEncoded());
     }
-
-    // 将交易记录列表生成 merkle root
-    public static String getMerkleRoot(ArrayList<Transaction> transactions) {
-        int count = transactions.size();
-        ArrayList<String> previousTreeLayer = new ArrayList<>();
-        for (Transaction transaction : transactions) {
-            previousTreeLayer.add(transaction.transactionId);
-        }
-        ArrayList<String> treeLayer = previousTreeLayer;
-        while (count > 1) {
-            treeLayer = new ArrayList<>();
-            for (int i = 1; i < previousTreeLayer.size(); i++) {
-                treeLayer.add(applySha256(previousTreeLayer.get(i - 1) + previousTreeLayer.get(i)));
-            }
-            count = treeLayer.size();
-            previousTreeLayer = treeLayer;
-        }
-        return treeLayer.size() == 1 ? treeLayer.get(0) : "";
-    }
 }
