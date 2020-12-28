@@ -1,5 +1,6 @@
 package com.imitee.chainblock.dao;
 
+import com.imitee.chainblock.core.block.Block;
 import com.imitee.chainblock.entity.NodeBean;
 import org.jetbrains.annotations.NotNull;
 
@@ -15,7 +16,7 @@ import java.net.Socket;
 public class MsgChannel {
     private final String ip;
     private final String openid;
-    private int port;
+    private final int port;
     private Socket socket;
 
     @NotNull
@@ -38,9 +39,15 @@ public class MsgChannel {
 
     public void connect() {
         try {
+            // 直接创建的连接
             socket.connect(new InetSocketAddress(ip, port), 5000);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void pushBlock(Block block) {
+
     }
 }
